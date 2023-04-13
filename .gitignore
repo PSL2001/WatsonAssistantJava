@@ -1,0 +1,24 @@
+# Application Properties
+backend/src/main/resources/application.properties
+backend/target/classes/application.properties
+
+#Compiled output
+/dist
+/tmp
+/out-tsc
+
+#Dependencies
+/node_modules
+
+#misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
