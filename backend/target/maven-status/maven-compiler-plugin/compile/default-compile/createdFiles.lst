@@ -1,4 +1,6 @@
-com\viewnext\Application.class
 com\viewnext\WatsonAssistantConfig.class
+com\viewnext\WatsonAssistantMessage.class
+com\viewnext\Application.class
+com\viewnext\WatsonAssistantService.class
 META-INF\spring-configuration-metadata.json
 com\viewnext\WatsonAssistantController.class

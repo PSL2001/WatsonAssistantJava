@@ -13,9 +13,9 @@ import org.springframework.validation.annotation.Validated;
 @Validated //Validacion de la configuracion
 public class WatsonAssistantConfig {
 
-    @NotNull(message = "El id del asistente es obligatorio")
-    @NotBlank(message = "El id del asistente no puede estar en blanco")
-    @Pattern(regexp = "[a-zA-Z0-9]*", message = "La clave de la api tiene caracteres no validos")
+    @NotNull(message = "La clave del asistente es obligatorio")
+    @NotBlank(message = "La clave del asistente no puede estar en blanco")
+    @Pattern(regexp = "[a-zA-Z0-9_]*", message = "La clave de la api tiene caracteres no validos")
     private String apikey;
     
     @NotNull(message = "El id de asistente es obligatorio")
