@@ -14,9 +14,9 @@
                             <strong>{{ res.owner }}</strong>
                             <img *ngIf="res.response_type === 'image'" src="{{ res.source }}" alt="image" />
                             <span *ngIf="res.response_type === 'text'">{{ res.text }}</span>
-                            <span *ngIf="res.response_type === 'option">{{ res.title }}</span>
+                            <span *ngIf="res.response_type === 'option'">{{ res.title }}</span>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                              <button class="btn btn-info" (click)="onSubmit(option.value.input.text)" *ngFor="let option of res.options" value="{{option.value.input.text}}">{{ option.label }}</button>
+                              <button class="btn btn-info" *ngFor="let option of res.options" value="{{option['input.text']}}" (click)="onSubmit(option['input.text'])">{{option['label']}}</button>
                             </div>
                           </span>
                       </dl>
@@ -24,10 +24,10 @@
                       <div class='input-group'>
                         <input type='text' name='message' #query1 class="form-control"
                                placeholder="Escribe para chatear..." 
-                               (keyup.enter) = "onSubmit(query1.value)"; query1.value = ''>
+                               (keyup.enter) = "onSubmit(query1['value']); query1.value = ''">
   
                         <div class='input-group-append'>
-                          <button class='btn btn-primary' (click)="onSubmit(query1.value); query1.value = ''">
+                          <button class='btn btn-primary' (click)="onSubmit(query1['value']); query1['value'] = ''">
                             Enviar
                           </button>
                         </div>
