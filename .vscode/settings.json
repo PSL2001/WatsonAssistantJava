@@ -7,5 +7,6 @@
         "backend\\target\\generated-sources\\annotations",
         "backend\\target\\generated-test-sources\\test-annotations"
     ],
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

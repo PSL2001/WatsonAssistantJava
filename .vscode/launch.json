@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<sns-watson-chatbot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.viewnext.Application",
+            "projectName": "sns-watson-chatbot",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

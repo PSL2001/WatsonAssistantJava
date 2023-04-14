@@ -10,7 +10,7 @@ export class MessageService {
   private readonly botUrl: string;
 
   constructor(private http: HttpClient) {
-    this.botUrl = 'http://localhost:8080/send?message='; // URL to ibm bot
+    this.botUrl = 'http://localhost:8080/send'; // URL to ibm bot
    }
 
    public sendMessage(message: Message): Observable<Message[]> {

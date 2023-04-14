@@ -24,7 +24,7 @@
                       <div class='input-group'>
                         <input type='text' name='message' #query1 class="form-control"
                                placeholder="Escribe para chatear..." 
-                               (keyup.enter) = "onSubmit(query1['value']); query1.value = ''">
+                               (keyup.enter) = "onSubmit(query1['value']); query1['value'] = ''">
   
                         <div class='input-group-append'>
                           <button class='btn btn-primary' (click)="onSubmit(query1['value']); query1['value'] = ''">

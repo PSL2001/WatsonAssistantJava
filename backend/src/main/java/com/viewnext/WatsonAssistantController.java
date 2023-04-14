@@ -1,17 +1,16 @@
 package com.viewnext;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class WatsonAssistantController {
 
     private WatsonAssistantService watsonAssistantService;
 
-    @Autowired
     public WatsonAssistantController(WatsonAssistantService watsonAssistantService) {
         this.watsonAssistantService = watsonAssistantService;
     }
