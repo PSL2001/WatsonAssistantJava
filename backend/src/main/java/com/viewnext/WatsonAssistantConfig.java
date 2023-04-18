@@ -6,13 +6,15 @@ import javax.validation.constraints.Pattern;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.validation.annotation.Validated;
+
+import lombok.Data;
 
 @Configuration
 @ConfigurationProperties(prefix = "ibm.watson.assistant")
-@Validated //Validacion de la configuracion
+@Data // Anotación de Lombok para generar automáticamente getters y setters
 public class WatsonAssistantConfig {
 
+    // Validación de las propiedades de configuración
     @NotNull(message = "La clave del asistente es obligatorio")
     @NotBlank(message = "La clave del asistente no puede estar en blanco")
     @Pattern(regexp = "[a-zA-Z0-9_]*", message = "La clave de la api tiene caracteres no validos")
@@ -39,31 +41,4 @@ public class WatsonAssistantConfig {
     )
     private String version;
 
-    //Getters
-    public String getApikey() {
-        return apikey;
-    }
-    public String getId() {
-        return id;
-    }
-    public String getUrl() {
-        return url;
-    }
-    public String getVersion() {
-        return version;
-    }
-
-    //Setters
-    public void setApikey(String apikey) {
-        this.apikey = apikey;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
-    public void setUrl(String url) {
-        this.url = url;
-    }
-    public void setVersion(String version) {
-        this.version = version;
-    }
 }

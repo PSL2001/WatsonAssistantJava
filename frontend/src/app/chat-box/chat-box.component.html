@@ -9,25 +9,30 @@
                 <div class="card">
                   <div class="card-header">Chatbox</div>
                   <div class="card-body chat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-                    <ng-container *ngFor="let item of history">
-                      <!-- Aquí se muestran los mensajes del historial -->
-                      <ng-container *ngFor="let conversation of history">
-                        <div class="conversation">
-                          <div *ngFor="let message of conversation" class="message">
-                            <span>
-                            <strong>{{ message.owner }}</strong>
-                            <img *ngIf="message.response_type === 'image'" src="{{ message.source }}" alt="image" />
+                    <ng-container *ngFor="let conversation of history">
+                      <!-- Aquí se muestran los mensajes de cada conversación -->
+                      <div class="conversation">
+                        <div *ngFor="let message of conversation" class="message">
+                          <span *ngIf="message.owner === 'user'" class="user-message">
+                            <img *ngIf="message.response_type === 'image'" [src]="message.source" alt="La imagen no carga" />
                             <span *ngIf="message.response_type === 'text'">{{ message.text }}</span>
                             <span *ngIf="message.response_type === 'option'">{{ message.title }}</span>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                              <button class="btn btn-info" *ngFor="let option of message.options" value="{{option['input.text']}}" (click)="onSubmit(option['input.text'])">{{option['label']}}</button>
+                              <button class="btn btn-info" *ngFor="let option of message.options; let i = index;" [value]="option['input.text']" (click)="onSubmit(option['input.text'])">{{option['label']}}</button>
                             </div>
                           </span>
-                          </div>
+                          <span *ngIf="message.owner === 'bot'" class="bot-message">
+                            <img *ngIf="message.response_type === 'image'" [src]="message.source" alt="La imagen no carga" />
+                            <span *ngIf="message.response_type === 'text'">{{ message.text }}</span>
+                            <span *ngIf="message.response_type === 'option'">{{ message.title }}</span>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                              <button class="btn btn-info" *ngFor="let option of message.options" [value]="option['option.label']" (click)="onSubmit(option['option.label'])">{{option['label']}}</button>
+                            </div>                            
+                          </span>
                         </div>
-                      </ng-container>
-                      
+                      </div>
                     </ng-container>
+                    
                     <hr/>
                     <div class='input-group'>
                       <input type='text' name='message' #query1 class="form-control"
@@ -38,7 +43,7 @@
                         <button class='btn btn-primary' (click)="onSubmit(query1['value']); query1['value'] = ''">
                           Enviar
                         </button>
-                        <button (click)="printHistory()">Print history</button>
+                        <!-- <button (click)="printHistory()">Print history</button> -->
                       </div>
                     </div>
                   </div>

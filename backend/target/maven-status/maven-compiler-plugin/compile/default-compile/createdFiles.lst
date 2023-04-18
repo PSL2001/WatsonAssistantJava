@@ -7,5 +7,4 @@ com\viewnext\Application$1.class
 com\viewnext\Application.class
 com\viewnext\WatsonAssistantService.class
 com\viewnext\WatsonAssistantGeneric.class
-META-INF\spring-configuration-metadata.json
 com\viewnext\WatsonAssistantController.class

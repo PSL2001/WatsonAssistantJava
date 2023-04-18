@@ -4,9 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
+@EnableWebMvc // Habilita la configuración web
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -17,7 +19,9 @@ public class Application {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/send").allowedOrigins("http://localhost:4200").allowedMethods("GET", "POST");
+                registry.addMapping("/send")
+                        .allowedOrigins("http://localhost:4200") // Permitir solicitudes desde localhost:4200
+                        .allowedMethods("GET", "POST"); // Permitir solicitudes GET y POST
             }
         };
     }

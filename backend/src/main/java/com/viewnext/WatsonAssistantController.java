@@ -1,30 +1,28 @@
 package com.viewnext;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200") // permite el acceso al origen http://localhost:4200
 public class WatsonAssistantController {
 
-    private WatsonAssistantService watsonAssistantService;
+    private final WatsonAssistantService watsonAssistantService; // variable final para el servicio de Watson Assistant
 
+    // constructor con inyección de dependencias del servicio de Watson Assistant
     public WatsonAssistantController(WatsonAssistantService watsonAssistantService) {
         this.watsonAssistantService = watsonAssistantService;
     }
 
-    @RequestMapping(value = "/send", method = RequestMethod.GET)
-    public ResponseEntity<WatsonAssistantMessage> send(@RequestParam("message") @RequestBody String message) {
+    // mapeo de la solicitud GET en /send con un parámetro "message" en la URL
+    @GetMapping("/send")
+    public ResponseEntity<WatsonAssistantMessage> send(@RequestParam("message") String message) {
         try {
             WatsonAssistantMessage response = watsonAssistantService.sendMessage(message);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
-            // Manejar cualquier excepción que pueda ocurrir
+            // si se produce una excepción, devolver un error del servidor interno
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

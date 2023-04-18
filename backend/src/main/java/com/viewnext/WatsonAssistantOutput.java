@@ -1,7 +1,12 @@
 package com.viewnext;
 
 import java.util.List;
-
+/*
+ * Representa la respuesta del servicio de Watson Assistant.
+ * Una respuesta contiene información sobre las intenciones, las entidades y las respuestas genéricas.
+ * Por ejemplo, en la oración "Quiero reservar una habitación para dos personas",
+ * la respuesta puede contener la intención "reservar", la entidad "personas" con el valor "dos" y la respuesta "¿Cuándo quieres reservar la habitación?".
+ */
 public class WatsonAssistantOutput {
     private List<WatsonAssistantGeneric> generic;
     private List<WatsonAssistantIntent> intents;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Message } from '../models/message';
+import { Message, DEFAULT_MESSAGE } from '../models/message';
 import { MessageService } from '../services/message.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,81 +10,96 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ChatBoxComponent implements OnInit {
 
-  message!: Message;
-  response!: Message[];
-  history: Message[][];
+  message: Message = { ...DEFAULT_MESSAGE }; // Inicializa el objeto de mensaje con el valor predeterminado
+  response: Message[] = [];
+  history: Message[][] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router, private messageService: MessageService) {
-    this.history = [];
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private messageService: MessageService
+  ) { }
 
   ngOnInit() {
-    let mensajeInicial = new Message();
-    mensajeInicial.text = "Hola";
-    this.response = [];
-  
-    this.messageService.sendMessage(mensajeInicial).subscribe(result => {
-      let messages = Array.isArray(result) ? result : [result];
-      messages.forEach(item => {
+    const initialMessage: Message = {
+      ...DEFAULT_MESSAGE,
+      text: 'Hola'
+    };
+
+    this.messageService.sendMessage(initialMessage).subscribe((result: Message[]) => {
+      const messages = Array.isArray(result) ? result : [result];
+      messages.forEach((item: Message) => {
         if (item.output && item.output.generic && item.output.generic.length > 0) {
-          const message = new Message();
-          message.text = item.output.generic[0].text;
-          message.owner = "Watson: ";
-          message.response_type = item.output.generic[0].response_type;
-          if (message.response_type === "image") {
-            message.source = item.output.generic[0].source;
-          } else if (message.response_type === "option") {
-            message.title = item.output.generic[0].title;
-            message.options = item.output.generic[0].options;
-          }
+          const message: Message = {
+            ...DEFAULT_MESSAGE,
+            text: item.output.generic[0].text,
+            owner: 'Watson: ',
+            response_type: item.output.generic[0].response_type,
+            source: item.output.generic[0].source || '',
+            title: item.output.generic[0].title || '',
+            options: item.output.generic[0].options || []
+          };
           this.history.push([message]);
         }
       });
     });
   }
-  
 
   onSubmit(query: string) {
-    this.message = new Message();
-    this.message.response_type = "text";
-    this.message.text = query;
-    this.message.owner = "Usuario: ";
+    this.message = {
+      ...DEFAULT_MESSAGE,
+      response_type: 'text',
+      text: query,
+      owner: 'Usuario: '
+    };
 
     this.history.push([this.message]);
 
-    this.messageService.sendMessage(this.message).subscribe(result => {
-      let messages = Array.isArray(result) ? result : [result];
-      let uniqueMessages: Message[] = [];
-
-      messages.forEach(item => {
+    this.messageService.sendMessage(this.message).subscribe((result: Message[]) => {
+      const messages = Array.isArray(result) ? result : [result];
+      messages.forEach((item: Message) => {
         if (item.output && item.output.generic && item.output.generic.length > 0) {
-          const message = new Message();
-          message.text = item.output.generic[0].text;
-          message.owner = "Watson: ";
-          message.response_type = item.output.generic[0].response_type;
-          
-          if (message.response_type === "image") {
-            message.source = item.output.generic[0].source;
-          } else if (message.response_type === "option") {
-            message.title = item.output.generic[0].title;
-            message.options = item.output.generic[0].options;
-          }
+          const message: Message = {
+            ...DEFAULT_MESSAGE,
+            text: item.output.generic[0].text,
+            owner: 'Watson: ',
+            response_type: item.output.generic[0].response_type,
+            source: item.output.generic[0].source || '',
+            title: item.output.generic[0].title || '',
+            options: item.output.generic[0].options || []
+          };
 
-          if (!uniqueMessages.some(m => m.text === message.text && m.response_type === message.response_type)) {
-            uniqueMessages.push(message);
+          if (message.response_type === 'image') {
+            const textMessage: Message = {
+              ...DEFAULT_MESSAGE,
+              text: item.output.generic[1].text,
+              owner: 'Watson: ',
+              response_type: 'text'
+            };
+            if (!this.history.some(arr => arr.some(m => m.source === message.source && m.response_type === message.response_type))) {
+              this.history.push([message, textMessage]);
+            }
+          } else {
+            this.history.push([message]);
           }
         }
       });
-
-      this.history.push(uniqueMessages);
     });
-}
-
+  }
 
   printHistory() {
     console.log(this.history);
   }
-  
 
-
+  trackByFn(index: number, item: Message[]) {
+    return index;
+  }
 }
+
+interface Option {
+  label: string;
+  value: string;
+  'input.text': string; // especificamos el tipo de la propiedad 'input.text'
+}
+
+
