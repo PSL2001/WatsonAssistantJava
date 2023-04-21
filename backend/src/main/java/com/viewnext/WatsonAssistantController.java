@@ -1,8 +1,11 @@
 package com.viewnext;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200") // permite el acceso al origen http://localhost:4200
@@ -20,10 +23,12 @@ public class WatsonAssistantController {
     public ResponseEntity<WatsonAssistantMessage> send(@RequestParam("message") String message) {
         try {
             WatsonAssistantMessage response = watsonAssistantService.sendMessage(message);
+            System.out.println("Respuesta de Watson Assistant: " + response.getOutput().toString());
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
             // si se produce una excepción, devolver un error del servidor interno
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            //return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            throw new Error("Error al enviar el mensaje al servicio de Watson Assistant: " + e.getMessage());
         }
     }
 

@@ -1,0 +1,20 @@
+.message {
+    margin-bottom: 5px;
+  }
+  
+  .message-container {
+    margin: 10px 10px 10px 0px;
+  }
+  
+  .message-owner {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #007bff;
+    margin-bottom: 3px;
+  }
+  
+  .message-text {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  

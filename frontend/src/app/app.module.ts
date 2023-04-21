@@ -7,10 +7,14 @@ import { ChatBoxComponent } from './chat-box/chat-box.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+// Importar MessageComponent
+import { MessageComponent } from './message/message.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ChatBoxComponent
+    ChatBoxComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

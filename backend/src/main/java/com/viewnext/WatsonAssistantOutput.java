@@ -45,5 +45,10 @@ public class WatsonAssistantOutput {
     public void setEntities(List<WatsonAssistantEntity> entities) {
         this.entities = entities;
     }
+
+    @Override
+    public String toString() {
+        return "WatsonAssistantOutput [entities=" + entities + ", generic=" + generic + ", intents=" + intents + "]";
+    }
 }
 

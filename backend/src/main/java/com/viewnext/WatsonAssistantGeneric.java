@@ -1,5 +1,7 @@
 package com.viewnext;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 /*  
@@ -12,6 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class WatsonAssistantGeneric {
     private String responseType;
     private String text;
+    private String source;
+    private String title;
+    private List<WatsonAssistantOption> options;
 
     public String getResponseType() {
         return responseType;
@@ -29,6 +34,33 @@ public class WatsonAssistantGeneric {
     public void setText(String text) {
         this.text = text;
     }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public List<WatsonAssistantOption> getOptions() {
+        return options;
+    }
+
+    public void setOptions(List<WatsonAssistantOption> options) {
+        this.options = options;
+    }
+
+    @Override
+    public String toString() {
+        return "WatsonAssistantGeneric [responseType=" + responseType + ", text=" + text + ", source=" + source + ", title=" + title + ", options=" + options + "]";
+    }
 }
-
-

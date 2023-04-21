@@ -1,0 +1,21 @@
+<div class="chatbot">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">ChatBot</h5>
+      <hr />
+      <div class="messages">
+        <div *ngFor="let message of history">
+          <app-message [message]="response[0]"></app-message>
+        </div>
+        <div #bottom></div>
+      </div>
+      <hr />
+      <form>
+        <div class="form-group">
+          <input type="text" name="message" #query1 class="form-control" placeholder="Escribe para chatear..." (keyup.enter)="submitMessage(query1.value); query1.value = ''">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

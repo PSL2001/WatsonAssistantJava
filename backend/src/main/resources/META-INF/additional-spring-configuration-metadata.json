@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "ibm.watson.assistant.id",
+    "type": "java.lang.String",
+    "description": "A description for 'ibm.watson.assistant.id'"
+  },
+  {
+    "name": "ibm.watson.assistant.version",
+    "type": "java.lang.String",
+    "description": "A description for 'ibm.watson.assistant.version'"
+  },
+  {
+    "name": "ibm.watson.assistant.url",
+    "type": "java.lang.String",
+    "description": "A description for 'ibm.watson.assistant.url'"
+  },
+  {
+    "name": "ibm.watson.assistant.apikey",
+    "type": "java.lang.String",
+    "description": "A description for 'ibm.watson.assistant.apikey'"
+  }
+]}

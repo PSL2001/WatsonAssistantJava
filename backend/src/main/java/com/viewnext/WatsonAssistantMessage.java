@@ -97,6 +97,11 @@ public class WatsonAssistantMessage {
     public void setOutput(WatsonAssistantOutput output) {
         this.output = output;
     }
+
+    @Override
+    public String toString() {
+        return "WatsonAssistantMessage{" + "userId=" + userId + ", intents=" + intents + ", entities=" + entities + ", generic=" + generic + ", output=" + output + '}';
+    }
 }
 
 

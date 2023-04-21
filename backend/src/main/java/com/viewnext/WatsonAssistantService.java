@@ -1,5 +1,7 @@
 package com.viewnext;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -80,4 +82,28 @@ public class WatsonAssistantService {
             throw new RuntimeException("Error al enviar mensaje a Watson Assistant: " + e.getMessage());
         }
     }
+
+    // private static String parseWatsonAssistantResponse(WatsonAssistantMessage watsonAssistantMessage) {
+    //     // Obtenemos el campo 'generic' de la respuesta
+    //     List<WatsonAssistantGeneric> genericList = watsonAssistantMessage.getOutput().getGeneric();
+    //     StringBuilder optionText = new StringBuilder();
+    //     // Iteramos por cada objeto de tipo WatsonAssistantGeneric de la lista
+    //     for (WatsonAssistantGeneric generic : genericList) {
+    //         // Si el objeto es de tipo 'option'
+    //         if ("option".equals(generic.getResponseType())) {
+    //             // Obtenemos la lista de opciones
+    //             List<String[]> options = generic.getOptions();
+    //             // Iteramos por cada opción
+    //             for (String[] option : options) {
+    //                 // Obtenemos el texto y lo concatenamos al StringBuilder
+    //                 optionText.append(option[0]);
+    //                 optionText.append(" / ");
+    //             }
+    //             // Devolvemos el String con las opciones
+    //             return optionText.toString();
+    //         }
+    //     }
+    //     // Si no hay opciones en la respuesta, devolvemos null
+    //     return null;
+    // }
 }

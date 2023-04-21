@@ -1,57 +1,39 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-body">
-          <div id="chatbox">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header">Chatbox</div>
-                  <div class="card-body chat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-                    <ng-container *ngFor="let conversation of history">
-                      <!-- Aquí se muestran los mensajes de cada conversación -->
-                      <div class="conversation">
-                        <div *ngFor="let message of conversation" class="message">
-                          <span *ngIf="message.owner === 'user'" class="user-message">
-                            <img *ngIf="message.response_type === 'image'" [src]="message.source" alt="La imagen no carga" />
-                            <span *ngIf="message.response_type === 'text'">{{ message.text }}</span>
-                            <span *ngIf="message.response_type === 'option'">{{ message.title }}</span>
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                              <button class="btn btn-info" *ngFor="let option of message.options; let i = index;" [value]="option['input.text']" (click)="onSubmit(option['input.text'])">{{option['label']}}</button>
-                            </div>
-                          </span>
-                          <span *ngIf="message.owner === 'bot'" class="bot-message">
-                            <img *ngIf="message.response_type === 'image'" [src]="message.source" alt="La imagen no carga" />
-                            <span *ngIf="message.response_type === 'text'">{{ message.text }}</span>
-                            <span *ngIf="message.response_type === 'option'">{{ message.title }}</span>
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                              <button class="btn btn-info" *ngFor="let option of message.options" [value]="option['option.label']" (click)="onSubmit(option['option.label'])">{{option['label']}}</button>
-                            </div>                            
-                          </span>
-                        </div>
-                      </div>
-                    </ng-container>
-                    
-                    <hr/>
-                    <div class='input-group'>
-                      <input type='text' name='message' #query1 class="form-control"
-                             placeholder="Escribe para chatear..." 
-                             (keyup.enter) = "onSubmit(query1['value']); query1['value'] = ''">
+<div class="chatbot">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">ChatBot</h5>
+      <hr />
 
-                      <div class='input-group-append'>
-                        <button class='btn btn-primary' (click)="onSubmit(query1['value']); query1['value'] = ''">
-                          Enviar
-                        </button>
-                        <!-- <button (click)="printHistory()">Print history</button> -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <div id="chatbox" class="messages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <div *ngFor="let previous of history">
+          <div class="row-striped">
+            <ng-container *ngFor="let res of previous">
+              <div *ngIf="res.response_type === 'text'">
+                <app-message [message]="res"></app-message>
               </div>
-            </div>
+              <div *ngIf="res.response_type === 'image'">
+                <img [src]="res.source" alt="Image">
+              </div>
+              <!-- Comprobamos si la respuesta siguiente de esta es un option -->
+              
+              <!-- <div *ngIf="res.response_type === 'option'">
+                <app-message [message]="res"></app-message>
+                <div *ngFor="let option of res.options">
+                  <button class="btn btn-info" (click)="submitMessage(option.value)">{{ option.label }}</button>
+                </div>
+              </div> -->
+            </ng-container>
           </div>
+          <hr />
         </div>
+      </div>
+      
+
+      <div class="form-group">
+        <input type="text" name="message" #query1 class="form-control" placeholder="Escribe para chatear..."
+          (keyup.enter)="submitMessage(query1.value); query1.value = ''">
+        <button class="btn btn-primary" (click)="submitMessage(query1.value); query1.value = ''"
+          type="button">Enviar</button>
       </div>
     </div>
   </div>

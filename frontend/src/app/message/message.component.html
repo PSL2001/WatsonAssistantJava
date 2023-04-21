@@ -1,0 +1,7 @@
+<div class="message-container" [ngClass]="{'from-user': message.owner === 'user'}">
+    <span class="message-owner">{{ message.owner }}</span>
+    <!-- Comprobamos si es un texto (mensaje normal) o un title (titulo de opcion) -->
+    <span *ngIf="message.response_type === 'text'" class="message-text">{{ message.text }}</span>
+    <span *ngIf="message.response_type === 'option'" class="message-text">{{ message.title }}</span>
+  </div>
+  
