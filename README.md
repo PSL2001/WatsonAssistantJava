@@ -59,7 +59,7 @@ Si quieres mandar otros tipos de mensajes, como por ejemplo, un audio, debes mod
 
 #
 ## Licencia
-Este proyecto está bajo la licencia GLP-3.0 - mira el fichero [LICENSE](/blob/LICENCE) para más detalles.
+Este proyecto está bajo la licencia GLP-3.0 - mira el fichero [LICENSE](LICENCE) para más detalles.
 
 #
 ## Autor
