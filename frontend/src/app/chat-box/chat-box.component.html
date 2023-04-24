@@ -14,20 +14,19 @@
               <div *ngIf="res.response_type === 'image'">
                 <img [src]="res.source" alt="Image">
               </div>
-              <!-- Comprobamos si la respuesta siguiente de esta es un option -->
-              
-              <!-- <div *ngIf="res.response_type === 'option'">
+              <div *ngIf="res.response_type === 'option'">
                 <app-message [message]="res"></app-message>
                 <div *ngFor="let option of res.options">
-                  <button class="btn btn-info" (click)="submitMessage(option.value)">{{ option.label }}</button>
+                  <button class="btn btn-info" (click)="submitMessage(getButtonValue(option))">{{ option.label }}</button>
                 </div>
-              </div> -->
+              </div>
             </ng-container>
           </div>
           <hr />
         </div>
       </div>
-      
+
+      <!-- <pre>{{ history | json }}</pre> -->
 
       <div class="form-group">
         <input type="text" name="message" #query1 class="form-control" placeholder="Escribe para chatear..."
