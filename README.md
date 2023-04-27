@@ -47,8 +47,17 @@ Esto ejecutará el frontend en el puerto 4200 a la espera de un usuario que acce
 ## Descripción de la configuración
 ### Backend
 El backend se configura mediante el fichero application.properties, el cual se encuentra en la ruta src/main/resources. En este fichero se debe configurar la url del servicio de Watson Assistant, la apikey y el workspaceid, además de la fecha de la version de Watson Assistant que se está utilizando.
+
+application.properties sigue esta estructura en el archivo:
+```properties
+ibm.watson.assistant.apikey = APIKEY
+ibm.watson.assistant.url = URL
+ibm.watson.assistant.id = ID
+ibm.watson.assistant.version = YYYY-MM-DD
+``` 
+Simplemente sustituye con tus datos los valores de APIKEY, URL, ID y la version. La version debe ser la fecha de la version de Watson Assistant que se está utilizando y debe seguir el formato YYYY-MM-DD.
 ### Frontend
-Frontend no requiere configaración especial.
+Frontend no requiere configuración especial.
 
 #
 ## Notas
