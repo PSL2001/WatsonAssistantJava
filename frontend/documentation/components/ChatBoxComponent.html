@@ -1,0 +1,1069 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ChatBoxComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/chat-box/chat-box.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-chat-box</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./chat-box.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./chat-box.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#history" >history</a>
+                            </li>
+                            <li>
+                                <a href="#message" >message</a>
+                            </li>
+                            <li>
+                                <a href="#response" >response</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getButtonValue" >getButtonValue</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#printHistory" >printHistory</a>
+                            </li>
+                            <li>
+                                <a href="#submitMessage" >submitMessage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/chat-box/chat-box.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getButtonValue"></a>
+                    <span class="name">
+                        <span ><b>getButtonValue</b></span>
+                        <a href="#getButtonValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getButtonValue(option: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/app/chat-box/chat-box.component.ts:161</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Función que se ejecuta cuando el usuario pulsa un botón
+Simplemente manda el valor del botón a la función onSubmit</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>option</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>el valor del botón o un string vacío si no existe</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/chat-box/chat-box.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Inicializa el componente
+Esta función se ejecuta cuando se inicia el componente
+Lo unico que hace es simular como si el usuario hubiera escrito &quot;Hola&quot; en el chat
+y envia el mensaje a Watson, para que este nos responda y se guarde en el historial
+ademas de mostrarlo en el chat</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>void</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit(res: <a href="../interfaces/Message.html" target="_self">Message | string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/chat-box/chat-box.component.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Función que se ejecuta cuando el usuario manda un mensaje cualquiera a Watson
+Esto nos devuelve una respuesta de watson, la cual puede ser un texto, una imagen o un conjunto de botones para elegir</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>res</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message | string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="printHistory"></a>
+                    <span class="name">
+                        <span ><b>printHistory</b></span>
+                        <a href="#printHistory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>printHistory()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="172"
+                            class="link-to-prism">src/app/chat-box/chat-box.component.ts:172</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Funcion de debug, imprime el historial en la consola</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitMessage"></a>
+                    <span class="name">
+                        <span ><b>submitMessage</b></span>
+                        <a href="#submitMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submitMessage(query1: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/chat-box/chat-box.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Función que se ejecuta cuando se pulsa el botón de enviar
+Toma el valor del input y lo envia a la función onSubmit</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>query1</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="history"></a>
+                    <span class="name">
+                        <span ><b>history</b></span>
+                        <a href="#history"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Message.html" target="_self" >Message[][]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/chat-box/chat-box.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="message"></a>
+                    <span class="name">
+                        <span ><b>message</b></span>
+                        <a href="#message"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ ...DEFAULT_MESSAGE }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/chat-box/chat-box.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="response"></a>
+                    <span class="name">
+                        <span ><b>response</b></span>
+                        <a href="#response"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Message.html" target="_self" >Message[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/chat-box/chat-box.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Message, DEFAULT_MESSAGE } from &#x27;../models/message&#x27;;
+import { MessageService } from &#x27;../services/message.service&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-chat-box&#x27;,
+  templateUrl: &#x27;./chat-box.component.html&#x27;,
+  styleUrls: [&#x27;./chat-box.component.css&#x27;]
+})
+export class ChatBoxComponent implements OnInit {
+
+  message: Message &#x3D; { ...DEFAULT_MESSAGE }; // Inicializa el objeto de mensaje con el valor predeterminado
+  response: Message[] &#x3D; [];
+  history: Message[][] &#x3D; [];
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private messageService: MessageService
+  ) { }
+
+  /**
+   * Inicializa el componente
+   * Esta función se ejecuta cuando se inicia el componente
+   * Lo unico que hace es simular como si el usuario hubiera escrito &quot;Hola&quot; en el chat
+   * y envia el mensaje a Watson, para que este nos responda y se guarde en el historial
+   * ademas de mostrarlo en el chat
+   * @param void
+   * @returns void
+   */
+  ngOnInit() {
+    // Creamos un mensaje inicial para que Watson nos responda
+    // Este mensaje es solo para simular que el usuario ha escrito &quot;Hola&quot; en el chat y que Watson nos responda
+    const initialMessage: Message &#x3D; {
+      ...DEFAULT_MESSAGE,
+      text: &#x27;Hola&#x27;
+    };
+    // Enviamos el mensaje a Watson, via el servicio de mensajes
+    this.messageService.sendMessage(initialMessage).subscribe((result: Message[]) &#x3D;&gt; {
+      // Recibimos la respuesta de Watson y la guardamos en la variable result
+      // Comprobamos si result es un array, si lo es, lo guardamos en la variable messages
+      const messages &#x3D; Array.isArray(result) ? result : [result];
+      // Recorremos el array de mensajes
+      messages.forEach((item: Message) &#x3D;&gt; {
+        // Comprobamos si el mensaje tiene un output y si este output tiene un generic y si este generic tiene un length mayor que 0
+        if (item.output &amp;&amp; item.output.generic &amp;&amp; item.output.generic.length &gt; 0) {
+          // Si se cumple la condición anterior, creamos un nuevo mensaje con el texto de la respuesta de Watson
+          // Como sabemos que siempre se recibe 1 mensaje de watson de esta forma, podemos acceder directamente a la posición 0 del array
+          const message: Message &#x3D; {
+            ...DEFAULT_MESSAGE,
+            text: item.output.generic[0].text,
+            owner: &#x27;Watson: &#x27;,
+            response_type: item.output.generic[0].response_type,
+            source: item.output.generic[0].source || &#x27;&#x27;,
+            title: item.output.generic[0].title || &#x27;&#x27;,
+            options: item.output.generic[0].options || []
+          };
+          //Mandamos el mensaje al historial
+          this.history.push([message]);
+        }
+      });
+    });
+  }
+
+  /**
+   * Función que se ejecuta cuando se pulsa el botón de enviar
+   * Toma el valor del input y lo envia a la función onSubmit
+   * @param query1 
+   */
+  submitMessage(query1: string) {
+    this.onSubmit(query1);
+  }
+
+  /**
+   * Función que se ejecuta cuando el usuario manda un mensaje cualquiera a Watson
+   * Esto nos devuelve una respuesta de watson, la cual puede ser un texto, una imagen o un conjunto de botones para elegir
+   * @param res 
+   */
+  onSubmit(res: Message | string) {
+    // Comprobamos si res es un string, si lo es, lo guardamos en la variable query, hacemos esto ya a veces nos llegan strings y otras veces objetos
+    const query &#x3D; typeof res &#x3D;&#x3D;&#x3D; &#x27;string&#x27; ? res : res.options?.values || res.text || &#x27;&#x27;;
+    // Como a veces nos llegan objetos, simplemente forzamos a que query sea un string
+    this.message &#x3D; {
+      ...DEFAULT_MESSAGE,
+      response_type: &#x27;text&#x27;,
+      text: query as string,
+      owner: &#x27;Usuario: &#x27;
+    };
+
+    // Mandamos el mensaje al historial
+    this.history.push([this.message]);
+
+    // Enviamos el mensaje a Watson, via el servicio de mensajes
+    this.messageService.sendMessage(this.message).subscribe((result: Message[]) &#x3D;&gt; {
+      // Recibimos la respuesta de Watson y la guardamos en la variable result
+      // Comprobamos si result es un array, si lo es, lo guardamos en la variable messages
+      const messages &#x3D; Array.isArray(result) ? result : [result];
+      console.log(messages);
+      // Recorremos el array de mensajes
+      messages.forEach((item: Message) &#x3D;&gt; {
+        if (item.output &amp;&amp; item.output.generic &amp;&amp; item.output.generic.length &gt; 0) {
+          console.log(item.output.generic)
+          const message: Message &#x3D; {
+            ...DEFAULT_MESSAGE,
+            text: item.output.generic[0].text,
+            owner: &#x27;Watson: &#x27;,
+            response_type: item.output.generic[0].response_type,
+            source: item.output.generic[0].source || &#x27;&#x27;,
+            title: item.output.generic[0].title || &#x27;&#x27;,
+            options: item.output.generic[0].options || []
+          };
+          //Comprobamos si existe un segundo output y si este es de tipo option
+          if (existeOutputOption(item.output.generic.length, item.output.generic)) {
+            //Si existe, creamos un nuevo mensaje con el segundo output
+            const optionMessage: Message &#x3D; {
+              ...DEFAULT_MESSAGE,
+              response_type: item.output.generic[1].response_type,
+              title: item.output.generic[1].title,
+              options: item.output.generic[1].options,
+            }
+            //Comprobamos si el mensaje ya existe en el historial
+            if (noExisteEnHistorial([message, optionMessage], this.history, item.output.generic[1].response_type)) {
+              this.history.push([message, optionMessage]);
+              return;
+            }
+          }
+          //Comprobamos si el mensaje es una imagen
+          if (message.response_type &#x3D;&#x3D;&#x3D; &#x27;image&#x27;) {
+            //Comprueba primero si la imagen le falta un elemento source. No debería de pasar, pero en caso de que la imagen original dejara de existir, se le asigna una imagen por defecto
+            if (message.source &#x3D;&#x3D;&#x3D; &#x27;&#x27;) {
+              message.source &#x3D; &#x27;https://placehold.it/300x300&#x27;;
+            }
+            //Las imagenes siempre vienen con un mensaje de texto, por lo que creamos un nuevo mensaje con el texto de la imagen
+            const textMessage: Message &#x3D; {
+              ...DEFAULT_MESSAGE,
+              text: item.output.generic[1].text,
+              owner: &#x27;Watson: &#x27;,
+              response_type: &#x27;text&#x27;
+            };
+            //Comprobamos si el mensaje ya existe en el historial
+            if (noExisteEnHistorial([message, textMessage], this.history, message.response_type)) {
+              this.history.push([message, textMessage]);
+            }
+          } else {
+            //Guardamos el mensaje en el historial, este else solo pasa cuando no es una imagen o un option
+            this.history.push([message]);
+          }
+        }
+      });
+    });
+
+  }
+
+  /**
+   * Función que se ejecuta cuando el usuario pulsa un botón
+   * Simplemente manda el valor del botón a la función onSubmit
+   * @param option 
+   * @returns el valor del botón o un string vacío si no existe
+   */
+  getButtonValue(option: any): string {
+    if (option.value &amp;&amp; option.value.input &amp;&amp; option.value.input.text) {
+      return option.value.input.text;
+    } else {
+      return &#x27;&#x27;;
+    }
+  }
+  
+  /**
+   * Funcion de debug, imprime el historial en la consola
+   */
+  printHistory() {
+    console.log(this.history);
+  }
+
+}
+/**
+ * Función que comprueba si existe un segundo output y si este es de tipo option
+ * 
+ * @param length 
+ * @param generic 
+ * @returns  true si existe un segundo output y este es de tipo option, false en caso contrario
+ */
+function existeOutputOption(length: number, generic: any) {
+  if (length &gt; 1) {
+    if (generic[1].response_type &#x3D;&#x3D;&#x3D; &#x27;option&#x27;) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Función que comprueba si un mensaje ya existe en el historial
+ * @param messages 
+ * @param history 
+ * @param response_type 
+ * @returns true si el mensaje no existe en el historial, false en caso contrario o -1 si ha habido un error
+ */
+function noExisteEnHistorial(messages: Message[], history: Message[][], response_type: string) {
+  //Comprobamos el tipo de respuesta que recibimos
+  if (response_type &#x3D;&#x3D;&#x3D; &#x27;option&#x27;) {
+    //Si es de tipo option, comprobamos que el titulo y el tipo de respuesta sean iguales
+    return !history.some(arr &#x3D;&gt; arr.some(m &#x3D;&gt; m.title &#x3D;&#x3D;&#x3D; messages[1].title &amp;&amp; m.response_type &#x3D;&#x3D;&#x3D; messages[1].response_type));
+  }
+  if (response_type &#x3D;&#x3D;&#x3D; &#x27;image&#x27;) {
+    //Si es de tipo image, comprobamos que el source y el tipo de respuesta sean iguales
+    return !history.some(arr &#x3D;&gt; arr.some(m &#x3D;&gt; m.source &#x3D;&#x3D;&#x3D; messages[0].source &amp;&amp; m.response_type &#x3D;&#x3D;&#x3D; messages[0].response_type));
+  }
+  //Si no es de tipo option ni de tipo image, entonces es de tipo text o ha habido un error
+  return -1;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;chatbot&quot;&gt;
+  &lt;div class&#x3D;&quot;card&quot;&gt;
+    &lt;div class&#x3D;&quot;card-body&quot;&gt;
+      &lt;h5 class&#x3D;&quot;card-title&quot;&gt;ChatBot&lt;/h5&gt;
+      &lt;hr /&gt;
+
+      &lt;div id&#x3D;&quot;chatbox&quot; class&#x3D;&quot;messages&quot; #scrollMe [scrollTop]&#x3D;&quot;scrollMe.scrollHeight&quot;&gt;
+        &lt;div *ngFor&#x3D;&quot;let previous of history&quot;&gt;
+          &lt;div class&#x3D;&quot;row-striped&quot;&gt;
+            &lt;ng-container *ngFor&#x3D;&quot;let res of previous&quot;&gt;
+              &lt;div *ngIf&#x3D;&quot;res.response_type &#x3D;&#x3D;&#x3D; &#x27;text&#x27;&quot;&gt;
+                &lt;app-message [message]&#x3D;&quot;res&quot;&gt;&lt;/app-message&gt;
+              &lt;/div&gt;
+              &lt;div *ngIf&#x3D;&quot;res.response_type &#x3D;&#x3D;&#x3D; &#x27;image&#x27;&quot;&gt;
+                &lt;img [src]&#x3D;&quot;res.source&quot; alt&#x3D;&quot;Image&quot;&gt;
+              &lt;/div&gt;
+              &lt;div *ngIf&#x3D;&quot;res.response_type &#x3D;&#x3D;&#x3D; &#x27;option&#x27;&quot;&gt;
+                &lt;app-message [message]&#x3D;&quot;res&quot;&gt;&lt;/app-message&gt;
+                &lt;div *ngFor&#x3D;&quot;let option of res.options&quot;&gt;
+                  &lt;button class&#x3D;&quot;btn btn-info&quot; (click)&#x3D;&quot;submitMessage(getButtonValue(option))&quot;&gt;{{ option.label }}&lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/ng-container&gt;
+          &lt;/div&gt;
+          &lt;hr /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- &lt;pre&gt;{{ history | json }}&lt;/pre&gt; --&gt;
+
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;message&quot; #query1 class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Escribe para chatear...&quot;
+          (keyup.enter)&#x3D;&quot;submitMessage(query1.value); query1.value &#x3D; &#x27;&#x27;&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;submitMessage(query1.value); query1.value &#x3D; &#x27;&#x27;&quot;
+          type&#x3D;&quot;button&quot;&gt;Enviar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./chat-box.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.chat {
+  list-style: none;
+  background: none;
+  margin: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 60px;
+  height: 60vh;
+  width: 100%;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.row-striped:nth-child(odd),
+.row-striped:nth-child(even) {
+  background-color: #ffffff;
+  padding: 3px;
+}
+
+.row-striped:nth-child(odd) {
+  background-color: #efefef;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="chatbot">  <div class="card">    <div class="card-body">      <h5 class="card-title">ChatBot</h5>      <hr />      <div id="chatbox" class="messages" #scrollMe [scrollTop]="scrollMe.scrollHeight">        <div *ngFor="let previous of history">          <div class="row-striped">            <ng-container *ngFor="let res of previous">              <div *ngIf="res.response_type === \'text\'">                <app-message [message]="res"></app-message>              </div>              <div *ngIf="res.response_type === \'image\'">                <img [src]="res.source" alt="Image">              </div>              <div *ngIf="res.response_type === \'option\'">                <app-message [message]="res"></app-message>                <div *ngFor="let option of res.options">                  <button class="btn btn-info" (click)="submitMessage(getButtonValue(option))">{{ option.label }}</button>                </div>              </div>            </ng-container>          </div>          <hr />        </div>      </div>      <!-- <pre>{{ history | json }}</pre> -->      <div class="form-group">        <input type="text" name="message" #query1 class="form-control" placeholder="Escribe para chatear..."          (keyup.enter)="submitMessage(query1.value); query1.value = \'\'">        <button class="btn btn-primary" (click)="submitMessage(query1.value); query1.value = \'\'"          type="button">Enviar</button>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'MessageComponent', 'selector': 'app-message'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ChatBoxComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ChatBoxComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
