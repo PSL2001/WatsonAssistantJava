@@ -39,6 +39,10 @@ Para ejecutar el frontend, se debe ejecutar el siguiente comando:
 ```bash
 ng serve
 ```
+o alternativamente puedes ejecutar lo siguiente
+```bash
+npm start
+```
 Esto ejecutará el frontend en el puerto 4200 a la espera de un usuario que acceda a la aplicación.
 
 **Nota**: Si quieres mandar mensajes por el frontend, debes ejecutar el backend antes que el frontend, ya que el frontend se conecta al backend para obtener la respuesta del chatbot.
