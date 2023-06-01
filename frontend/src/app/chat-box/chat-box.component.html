@@ -30,9 +30,9 @@
 
       <div class="form-group">
         <input type="text" name="message" #query1 class="form-control" placeholder="Escribe para chatear..."
-          (keyup.enter)="submitMessage(query1.value); query1.value = ''">
+          (keyup.enter)="submitMessage(query1.value); query1.value = ''" id="user-input">
         <button class="btn btn-primary" (click)="submitMessage(query1.value); query1.value = ''"
-          type="button">Enviar</button>
+          type="button" id="send-button">Enviar</button>
       </div>
     </div>
   </div>

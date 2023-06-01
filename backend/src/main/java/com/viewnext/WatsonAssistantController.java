@@ -1,7 +1,5 @@
 package com.viewnext;
 
-import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +18,7 @@ public class WatsonAssistantController {
 
     // mapeo de la solicitud GET en /send con un parámetro "message" en la URL
     @GetMapping("/send")
-    public ResponseEntity<WatsonAssistantMessage> send(@RequestParam("message") String message) {
+    public ResponseEntity<WatsonAssistantMessage> send(@RequestParam String message) {
         try {
             WatsonAssistantMessage response = watsonAssistantService.sendMessage(message);
             System.out.println("Respuesta de Watson Assistant: " + response.getOutput().toString());

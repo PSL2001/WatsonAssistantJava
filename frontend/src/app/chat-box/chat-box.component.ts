@@ -36,6 +36,8 @@ export class ChatBoxComponent implements OnInit {
       ...DEFAULT_MESSAGE,
       text: 'Hola'
     };
+    // Desactivamos el botón de enviar y el input
+    disableUserInput();
     // Enviamos el mensaje a Watson, via el servicio de mensajes
     this.messageService.sendMessage(initialMessage).subscribe((result: Message[]) => {
       // Recibimos la respuesta de Watson y la guardamos en la variable result
@@ -58,6 +60,8 @@ export class ChatBoxComponent implements OnInit {
           };
           //Mandamos el mensaje al historial
           this.history.push([message]);
+          //Activamos el botón de enviar y el input
+          enableUserInput();
         }
       });
     });
@@ -66,16 +70,18 @@ export class ChatBoxComponent implements OnInit {
   /**
    * Función que se ejecuta cuando se pulsa el botón de enviar
    * Toma el valor del input y lo envia a la función onSubmit
-   * @param query1 
+   * @param query1
    */
   submitMessage(query1: string) {
+    // Desactivamos el botón de enviar y el input
+    disableUserInput();
     this.onSubmit(query1);
   }
 
   /**
    * Función que se ejecuta cuando el usuario manda un mensaje cualquiera a Watson
    * Esto nos devuelve una respuesta de watson, la cual puede ser un texto, una imagen o un conjunto de botones para elegir
-   * @param res 
+   * @param res
    */
   onSubmit(res: Message | string) {
     // Comprobamos si res es un string, si lo es, lo guardamos en la variable query, hacemos esto ya a veces nos llegan strings y otras veces objetos
@@ -94,6 +100,11 @@ export class ChatBoxComponent implements OnInit {
     // Enviamos el mensaje a Watson, via el servicio de mensajes
     this.messageService.sendMessage(this.message).subscribe((result: Message[]) => {
       // Recibimos la respuesta de Watson y la guardamos en la variable result
+      console.log("Resultado de la respuesta como JSON (respuesta por defecto): " + JSON.stringify(result));
+      // Con result, lo convertimos en tipo Message para poder trabajar con el
+      const message = result as unknown as Message;
+      console.log("Resultado de la respuesta como Message: " + message);
+
       // Comprobamos si result es un array, si lo es, lo guardamos en la variable messages
       const messages = Array.isArray(result) ? result : [result];
       console.log(messages);
@@ -146,16 +157,16 @@ export class ChatBoxComponent implements OnInit {
             //Guardamos el mensaje en el historial, este else solo pasa cuando no es una imagen o un option
             this.history.push([message]);
           }
+          enableUserInput();
         }
       });
     });
-
   }
 
   /**
    * Función que se ejecuta cuando el usuario pulsa un botón
    * Simplemente manda el valor del botón a la función onSubmit
-   * @param option 
+   * @param option
    * @returns el valor del botón o un string vacío si no existe
    */
   getButtonValue(option: any): string {
@@ -165,7 +176,7 @@ export class ChatBoxComponent implements OnInit {
       return '';
     }
   }
-  
+
   /**
    * Funcion de debug, imprime el historial en la consola
    */
@@ -176,9 +187,9 @@ export class ChatBoxComponent implements OnInit {
 }
 /**
  * Función que comprueba si existe un segundo output y si este es de tipo option
- * 
- * @param length 
- * @param generic 
+ *
+ * @param length
+ * @param generic
  * @returns  true si existe un segundo output y este es de tipo option, false en caso contrario
  */
 function existeOutputOption(length: number, generic: any) {
@@ -192,9 +203,9 @@ function existeOutputOption(length: number, generic: any) {
 
 /**
  * Función que comprueba si un mensaje ya existe en el historial
- * @param messages 
- * @param history 
- * @param response_type 
+ * @param messages
+ * @param history
+ * @param response_type
  * @returns true si el mensaje no existe en el historial, false en caso contrario o -1 si ha habido un error
  */
 function noExisteEnHistorial(messages: Message[], history: Message[][], response_type: string) {
@@ -210,3 +221,22 @@ function noExisteEnHistorial(messages: Message[], history: Message[][], response
   //Si no es de tipo option ni de tipo image, entonces es de tipo text o ha habido un error
   return -1;
 }
+
+function disableUserInput() {
+  const input = document.getElementById('user-input');
+  const button = document.getElementById('send-button');
+  if (input && button) {
+    input.setAttribute('disabled', 'true');
+    button.setAttribute('disabled', 'true');
+  }
+}
+
+function enableUserInput() {
+  const input = document.getElementById('user-input');
+  const button = document.getElementById('send-button');
+  if (input && button) {
+    input.removeAttribute('disabled');
+    button.removeAttribute('disabled');
+  }
+}
+
