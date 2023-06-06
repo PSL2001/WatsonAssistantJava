@@ -65,6 +65,7 @@ export class ChatBoxComponent implements OnInit {
         }
       });
     });
+    enableUserInput();
   }
 
   /**
