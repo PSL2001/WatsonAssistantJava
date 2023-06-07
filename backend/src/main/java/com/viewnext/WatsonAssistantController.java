@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200") // permite el acceso al origen http://localhost:4200
+// Permitir peticiones desde cualquier origen
+@CrossOrigin(origins = "*")
 public class WatsonAssistantController {
 
     private final WatsonAssistantService watsonAssistantService; // variable final para el servicio de Watson Assistant
