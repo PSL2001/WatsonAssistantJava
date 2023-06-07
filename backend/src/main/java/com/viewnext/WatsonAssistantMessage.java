@@ -47,9 +47,19 @@ public class WatsonAssistantMessage {
     private WatsonAssistantOutput output;
 
     // Constructores, getters y setters
+    /**
+     * Constructor por defecto.
+     */
     public WatsonAssistantMessage() {
     }
-
+    /**
+     * Constructor con parámetros.
+     * @param userId
+     * @param intents
+     * @param entities
+     * @param generic
+     * @param output
+     */
     public WatsonAssistantMessage(String userId, List<WatsonAssistantIntent> intents, List<WatsonAssistantEntity> entities, List<WatsonAssistantGeneric> generic, WatsonAssistantOutput output) {
         this.userId = userId;
         this.intents = intents;
@@ -57,47 +67,80 @@ public class WatsonAssistantMessage {
         this.generic = generic;
         this.output = output;
     }
-
+    /**
+     * Devuelve el identificador del usuario que envía el mensaje.
+     * @return userId
+     */
     public String getUserId() {
         return userId;
     }
-
+    /**
+     * Establece el identificador del usuario que envía el mensaje.
+     * @param userId
+     */
     public void setUserId(String userId) {
         this.userId = userId;
     }
-
+    /**
+     * Devuelve la lista de intenciones devueltas por el servicio de Watson Assistant.
+     * @return intents
+     */
     public List<WatsonAssistantIntent> getIntents() {
         return intents;
     }
-
+    /**
+     * Establece la lista de intenciones devueltas por el servicio de Watson Assistant.
+     * @param intents
+     */
     public void setIntents(List<WatsonAssistantIntent> intents) {
         this.intents = intents;
     }
-
+    /**
+     * Devuelve la lista de entidades devueltas por el servicio de Watson Assistant.
+     * @return entities
+     */
     public List<WatsonAssistantEntity> getEntities() {
         return entities;
     }
-
+    /**
+     * Establece la lista de entidades devueltas por el servicio de Watson Assistant.
+     * @param entities
+     */
     public void setEntities(List<WatsonAssistantEntity> entities) {
         this.entities = entities;
     }
-
+    /**
+     * Devuelve la lista de respuestas genéricas devueltas por el servicio de Watson Assistant.
+     * @return generic
+     */
     public List<WatsonAssistantGeneric> getGeneric() {
         return generic;
     }
-
+    /**
+     * Establece la lista de respuestas genéricas devueltas por el servicio de Watson Assistant.
+     * @param generic
+     */
     public void setGeneric(List<WatsonAssistantGeneric> generic) {
         this.generic = generic;
     }
-
+    /**
+     * Devuelve el objeto que contiene información sobre la respuesta del usuario.
+     * @return output
+     */
     public WatsonAssistantOutput getOutput() {
         return output;
     }
-
+    /**
+     * Establece el objeto que contiene información sobre la respuesta del usuario.
+     * @param output
+     */
     public void setOutput(WatsonAssistantOutput output) {
         this.output = output;
     }
-
+    /**
+     * Devuelve una representación del objeto en formato String.
+     * @return String
+     */
     @Override
     public String toString() {
         return "WatsonAssistantMessage{" + "userId=" + userId + ", intents=" + intents + ", entities=" + entities + ", generic=" + generic + ", output=" + output + '}';
