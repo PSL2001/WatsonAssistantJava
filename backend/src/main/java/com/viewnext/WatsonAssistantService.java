@@ -20,12 +20,41 @@ import com.ibm.watson.assistant.v2.model.SessionResponse;
  */
 @Service
 public class WatsonAssistantService {
+    /**
+     * Configuración de Watson Assistant.
+     * Esta configuración se inyecta mediante el constructor.
+     * La configuración contiene el API Key y el ID del asistente.
+     * El API Key se utiliza para autenticarse con el servicio de Watson Assistant.
+     * El ID del asistente se utiliza para identificar el asistente con el que se quiere conectar.
+     */
     private final WatsonAssistantConfig config;
+    /**
+     * Sesión con el servicio de Watson Assistant.
+     * Una sesión es un contexto que se mantiene entre las peticiones de un cliente.
+     * Por ejemplo, si el cliente envía una petición con el mensaje "Quiero reservar una habitación para dos personas",
+     * el servicio de Watson Assistant puede devolver una respuesta con el mensaje "¿Cuándo quieres reservar la habitación?".
+     * La respuesta contiene un contexto que indica que el cliente quiere reservar una habitación para dos personas.
+     * 
+     * La sesión se crea al conectarse con el servicio de Watson Assistant y dependiendo del plan que se utilice,
+     * la sesión tiene un tiempo de vida.
+     * Por ejemplo, si el plan es "Lite", la sesión tiene un tiempo de vida de 5 minutos.
+     * Si el cliente envía una petición con el mensaje "Quiero reservar una habitación para dos personas" y la sesión
+     * se ha creado hace 10 minutos, el servicio de Watson Assistant no devolverá una respuesta con el mensaje
+     */
     private SessionResponse session;
+    /**
+     * Assistant de Watson Assistant.
+     * El Assistant se utiliza para crear una sesión y enviar mensajes, basándose en la configuración.
+     * El Assistant se crea al conectarse con el servicio de Watson Assistant.
+     * El Assistant se utiliza para crear una sesión y enviar mensajes.
+     */
     private Assistant assistant;
 
     /*  
      * Constructor con inyección de dependencias de la configuración de Watson Assistant.
+     * La configuración de Watson Assistant se inyecta mediante el constructor.
+     * La configuración contiene el API Key y el ID del asistente.
+     * @param config Configuración de Watson Assistant.
      */
     public WatsonAssistantService(WatsonAssistantConfig config) {
         this.config = config;
@@ -35,6 +64,7 @@ public class WatsonAssistantService {
      * Una sesión es un contexto que se mantiene entre las peticiones de un cliente.
      * Por ejemplo, si el cliente envía una petición con el mensaje "Quiero reservar una habitación para dos personas",
      * el servicio de Watson Assistant puede devolver una respuesta con el mensaje "¿Cuándo quieres reservar la habitación?".
+     * @param service Servicio de Watson Assistant.
      */
     private SessionResponse createSession(Assistant service){
         CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(config.getId()).build();
@@ -58,6 +88,7 @@ public class WatsonAssistantService {
     /*  
      * Envía un mensaje al servicio de Watson Assistant.
      * El servicio de Watson Assistant devuelve una respuesta que se devuelve al cliente.
+     * @param message Mensaje que se envía al servicio de Watson Assistant.
      */
     public WatsonAssistantMessage sendMessage(String message) {
         try {
@@ -80,28 +111,4 @@ public class WatsonAssistantService {
             throw new RuntimeException("Error al enviar mensaje a Watson Assistant: " + e.getMessage());
         }
     }
-
-    // private static String parseWatsonAssistantResponse(WatsonAssistantMessage watsonAssistantMessage) {
-    //     // Obtenemos el campo 'generic' de la respuesta
-    //     List<WatsonAssistantGeneric> genericList = watsonAssistantMessage.getOutput().getGeneric();
-    //     StringBuilder optionText = new StringBuilder();
-    //     // Iteramos por cada objeto de tipo WatsonAssistantGeneric de la lista
-    //     for (WatsonAssistantGeneric generic : genericList) {
-    //         // Si el objeto es de tipo 'option'
-    //         if ("option".equals(generic.getResponseType())) {
-    //             // Obtenemos la lista de opciones
-    //             List<String[]> options = generic.getOptions();
-    //             // Iteramos por cada opción
-    //             for (String[] option : options) {
-    //                 // Obtenemos el texto y lo concatenamos al StringBuilder
-    //                 optionText.append(option[0]);
-    //                 optionText.append(" / ");
-    //             }
-    //             // Devolvemos el String con las opciones
-    //             return optionText.toString();
-    //         }
-    //     }
-    //     // Si no hay opciones en la respuesta, devolvemos null
-    //     return null;
-    // }
 }

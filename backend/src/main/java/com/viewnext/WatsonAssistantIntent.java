@@ -22,28 +22,28 @@ public class WatsonAssistantIntent {
     // Getters and setters
     /**
      * Devuelve la intención del mensaje.
-     * @return intent
+     * @return intent Intención del mensaje.
      */
     public String getIntent() {
         return intent;
     }
     /**
      * Establece la intención del mensaje.
-     * @param intent
+     * @param intent Intención del mensaje.
      */
     public void setIntent(String intent) {
         this.intent = intent;
     }
     /**
      * Devuelve la confianza de la intención.
-     * @return confidence
+     * @return confidence Confianza de la intención.
      */
     public double getConfidence() {
         return confidence;
     }
     /**
      * Establece la confianza de la intención.
-     * @param confidence
+     * @param confidence Confianza de la intención.
      */
     public void setConfidence(double confidence) {
         this.confidence = confidence;

@@ -18,22 +18,30 @@ public class WatsonAssistantEntity {
     private String value;
 
     /**
-     * Getters y setters.
-     * @return la propiedad correspondiente.
-     * @param la propiedad correspondiente.
+     * Devuelve el nombre de la entidad.
+     * @return Nombre de la entidad.
      */
     public String getEntity() {
         return entity;
     }
-
+    /**
+     * Establece el nombre de la entidad.
+     * @param entity Nombre de la entidad.
+     */
     public void setEntity(String entity) {
         this.entity = entity;
     }
-
+    /**
+     * Devuelve el valor de la entidad.
+     * @return Valor de la entidad.
+     */
     public String getValue() {
         return value;
     }
-
+    /**
+     * Establece el valor de la entidad.
+     * @param value Valor de la entidad.
+     */
     public void setValue(String value) {
         this.value = value;
     }

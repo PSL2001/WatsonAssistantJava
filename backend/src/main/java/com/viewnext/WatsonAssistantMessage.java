@@ -54,11 +54,11 @@ public class WatsonAssistantMessage {
     }
     /**
      * Constructor con parámetros.
-     * @param userId
-     * @param intents
-     * @param entities
-     * @param generic
-     * @param output
+     * @param userId Identificador del usuario.
+     * @param intents Lista de intenciones.
+     * @param entities Lista de entidades.
+     * @param generic Lista de respuestas genéricas.
+     * @param output Respuesta del asistente.
      */
     public WatsonAssistantMessage(String userId, List<WatsonAssistantIntent> intents, List<WatsonAssistantEntity> entities, List<WatsonAssistantGeneric> generic, WatsonAssistantOutput output) {
         this.userId = userId;
@@ -76,7 +76,7 @@ public class WatsonAssistantMessage {
     }
     /**
      * Establece el identificador del usuario que envía el mensaje.
-     * @param userId
+     * @param userId Identificador del usuario.
      */
     public void setUserId(String userId) {
         this.userId = userId;
@@ -90,7 +90,7 @@ public class WatsonAssistantMessage {
     }
     /**
      * Establece la lista de intenciones devueltas por el servicio de Watson Assistant.
-     * @param intents
+     * @param intents Lista de intenciones.
      */
     public void setIntents(List<WatsonAssistantIntent> intents) {
         this.intents = intents;
@@ -104,7 +104,7 @@ public class WatsonAssistantMessage {
     }
     /**
      * Establece la lista de entidades devueltas por el servicio de Watson Assistant.
-     * @param entities
+     * @param entities Lista de entidades.
      */
     public void setEntities(List<WatsonAssistantEntity> entities) {
         this.entities = entities;
@@ -118,21 +118,21 @@ public class WatsonAssistantMessage {
     }
     /**
      * Establece la lista de respuestas genéricas devueltas por el servicio de Watson Assistant.
-     * @param generic
+     * @param generic Lista de respuestas genéricas.
      */
     public void setGeneric(List<WatsonAssistantGeneric> generic) {
         this.generic = generic;
     }
     /**
      * Devuelve el objeto que contiene información sobre la respuesta del usuario.
-     * @return output
+     * @return output La respuesta del asistente.
      */
     public WatsonAssistantOutput getOutput() {
         return output;
     }
     /**
      * Establece el objeto que contiene información sobre la respuesta del usuario.
-     * @param output
+     * @param output La respuesta del asistente.
      */
     public void setOutput(WatsonAssistantOutput output) {
         this.output = output;

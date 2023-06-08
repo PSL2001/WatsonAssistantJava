@@ -19,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class Application {
     /**
      * Método principal de la aplicación.
-     * @param args
+     * @param args Argumentos de la línea de comandos.
      */
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -28,7 +28,7 @@ public class Application {
      * Configuración CORS para permitir peticiones desde el cliente Angular.
      * En este caso, se permite que el cliente Angular realice peticiones GET y POST desde localhost:4200.
      * Sirve principalmente si estas ejecutando el cliente y servidor en el mismo equipo.
-     * @return
+     * @return Configuración CORS.
      */
     @Bean
     public WebMvcConfigurer corsConfigurer() {

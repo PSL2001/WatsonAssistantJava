@@ -24,7 +24,7 @@ public class WatsonAssistantController {
     /**
      * Constructor de la clase.
      * Inyecta el servicio de Watson Assistant.
-     * @param watsonAssistantService
+     * @param watsonAssistantService Servicio de Watson Assistant.
      */
     public WatsonAssistantController(WatsonAssistantService watsonAssistantService) {
         this.watsonAssistantService = watsonAssistantService;
@@ -32,8 +32,8 @@ public class WatsonAssistantController {
 
     /**
      * Método que responde a peticiones GET en la ruta /send con un parámetro "message" en la URL.
-     * @param message
-     * @return
+     * @param message Mensaje que se envía al servicio de Watson Assistant.
+     * @return Respuesta del servicio de Watson Assistant.
      */
     @GetMapping("/send")
     public ResponseEntity<WatsonAssistantMessage> send(@RequestParam String message) {

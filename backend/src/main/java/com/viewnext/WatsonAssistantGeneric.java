@@ -43,7 +43,7 @@ public class WatsonAssistantGeneric {
     /**
      * Setter de responseType.
      * Viene de la propiedad "response_type" de la respuesta JSON de Watson Assistant.
-     * @param responseType
+     * @param responseType Tipo de respuesta.
      */
     @JsonProperty("response_type")
     public void setResponseType(String responseType) {
@@ -59,7 +59,7 @@ public class WatsonAssistantGeneric {
     /**
      * Setter de text.
      * Viene de la propiedad "text" de la respuesta JSON de Watson Assistant.
-     * @param text
+     * @param text Texto de la respuesta.
      */
     public void setText(String text) {
         this.text = text;
@@ -74,7 +74,7 @@ public class WatsonAssistantGeneric {
     /**
      * Setter de source.
      * Viene de la propiedad "source" de la respuesta JSON de Watson Assistant.
-     * @param source
+     * @param source URL de la imagen.
      */
     public void setSource(String source) {
         this.source = source;
@@ -89,7 +89,7 @@ public class WatsonAssistantGeneric {
     /**
      * Setter de title.
      * Viene de la propiedad "title" de la respuesta JSON de Watson Assistant.
-     * @param title
+     * @param title Título de la respuesta.
      */
     public void setTitle(String title) {
         this.title = title;
@@ -104,7 +104,7 @@ public class WatsonAssistantGeneric {
     /**
      * Setter de options.
      * Viene de la propiedad "options" de la respuesta JSON de Watson Assistant.
-     * @param options
+     * @param options Lista de opciones.
      */
     public void setOptions(List<WatsonAssistantOption> options) {
         this.options = options;
