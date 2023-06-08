@@ -75,6 +75,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Message model</p>
+
+            </p>
 
 
         <section data-compodoc="block-index">
@@ -411,13 +418,26 @@
   options?: { label: string, value: string }[];
   output?: DialogNodeOutput;
 }
-
+/**
+ * DialogNodeOutput model
+ * @param entities: any[]
+ * @param generic: any[]
+ * @param intents: any[]
+ */
 export interface DialogNodeOutput {
   entities: any[];
   generic: any[];
   intents: any[];
 }
-
+/**
+ * Default message
+ * @param response_type: &#x27;&#x27;
+ * @param text: &#x27;&#x27;
+ * @param owner: &#x27;&#x27;
+ * @param options: []
+ * @param output: { entities: [], generic: [], intents: [] }
+ * @returns Message
+ */
 export const DEFAULT_MESSAGE: Message &#x3D; {
   response_type: &#x27;&#x27;,
   text: &#x27;&#x27;,

@@ -110,12 +110,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/message.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/message.service.ts:15</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Message service</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -124,6 +126,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -138,6 +141,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>: HttpClient</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -173,14 +180,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/services/message.service.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/services/message.service.ts:26</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Send message</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -216,7 +225,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Observable&lt;Message[]&gt;</p>
+
                     </div>
                 </td>
             </tr>
@@ -237,13 +247,42 @@ import { BehaviorSubject } from &#x27;rxjs&#x27;;
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+/**
+ * Message service
+ * @param http: HttpClient
+ * @returns Observable&lt;Message[]&gt;
+ */
 export class MessageService {
-
+  /**
+   * Message service
+   * @param http: HttpClient
+   */
   constructor(private http: HttpClient) { }
-
+  /**
+   * Send message
+   * @param message
+   * @returns Observable&lt;Message[]&gt;
+   */
   sendMessage(message: Message): Observable&lt;Message[]&gt; {
+    /**
+     * La url del backend. En este caso esta apuntando al backend de Gitpod.
+     * Puedes cambiarlo por el backend de tu preferencia. Siempre y cuando
+     * el backend este disponible y este apuntando a la ruta correcta (en este caso /send).
+     */
     const url &#x3D; &#x60;https://8080-psl2001-watsonassistant-05s6p4q5lgj.ws-eu98.gitpod.io/send/&#x60;;
+    /**
+     * La query string que se va a enviar al backend.
+     * En mi caso, el backend espera un query string con el parametro message.
+     * Ejemplo: ?message&#x3D;Hola
+     * Si tu backend espera otro query string, puedes cambiarlo aqui.
+     */
     const queryString &#x3D; &#x60;?message&#x3D;${encodeURIComponent(message.text)}&#x60;;
+    /**
+     * Retorna un observable con el resultado de la peticion.
+     * En este caso, el backend retorna un arreglo de mensajes.
+     * Y estos se retornan por GET.
+     * Si tu backend retorna algo diferente o lo hace por POST, puedes cambiarlo aqui.
+     */
     return this.http.get&lt;Message[]&gt;(url + queryString);
   }
 }

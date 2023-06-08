@@ -3,6 +3,12 @@ import { Message, DEFAULT_MESSAGE } from '../models/message';
 import { MessageService } from '../services/message.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
+/**
+ * Componente que se encarga de mostrar el chat y de enviar los mensajes a Watson
+ * @param void
+ * @returns void
+ * @example <app-chat-box></app-chat-box>
+ */
 @Component({
   selector: 'app-chat-box',
   templateUrl: './chat-box.component.html',
@@ -81,7 +87,8 @@ export class ChatBoxComponent implements OnInit {
   /**
    * Función que se ejecuta cuando el usuario manda un mensaje cualquiera a Watson
    * Esto nos devuelve una respuesta de watson, la cual puede ser un texto, una imagen o un conjunto de botones para elegir
-   * @param res
+   * @param res Mensaje que se envia a Watson
+   * @returns void
    */
   onSubmit(res: Message | string) {
     // Comprobamos si res es un string, si lo es, lo guardamos en la variable query, hacemos esto ya a veces nos llegan strings y otras veces objetos
@@ -221,7 +228,14 @@ function noExisteEnHistorial(messages: Message[], history: Message[][], response
   //Si no es de tipo option ni de tipo image, entonces es de tipo text o ha habido un error
   return -1;
 }
-
+/**
+ * Función que deshabilita el input del usuario
+ * Se llama cuando se envía un mensaje
+ * @returns void
+ * @see enableUserInput
+ * @see onSubmit
+ * @see getButtonValue
+ */
 function disableUserInput() {
   const input = document.getElementById('user-input');
   const button = document.getElementById('send-button');
@@ -230,7 +244,14 @@ function disableUserInput() {
     button.setAttribute('disabled', 'true');
   }
 }
-
+/**
+ * Función que habilita el input del usuario
+ * Se llama cuando se recibe un mensaje
+ * @returns void
+ * @see disableUserInput
+ * @see onSubmit
+ * @see getButtonValue
+ */
 function enableUserInput() {
   const input = document.getElementById('user-input');
   const button = document.getElementById('send-button');

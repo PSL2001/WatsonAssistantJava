@@ -24,4 +24,8 @@ import { MessageComponent } from './message/message.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+/**
+ * App module
+ * @returns void
+ */
 export class AppModule { }

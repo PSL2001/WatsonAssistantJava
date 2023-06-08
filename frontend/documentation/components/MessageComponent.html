@@ -182,7 +182,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/message/message.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/message/message.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -208,9 +208,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/message/message.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/message/message.component.ts:22</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Message component</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -242,17 +248,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/message/message.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/message/message.component.ts:28</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>On init</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>void</p>
 
                     </div>
                 </td>
@@ -273,11 +287,25 @@ import { Message } from &#x27;../models/message&#x27;;
   templateUrl: &#x27;./message.component.html&#x27;,
   styleUrls: [&#x27;./message.component.css&#x27;]
 })
+/**
+ * Message component
+ * @param message: Message
+ * @returns void
+ * @example &lt;app-message [message]&#x3D;&quot;message&quot;&gt;&lt;/app-message&gt;
+ * @example &lt;app-message message&#x3D;&quot;message&quot;&gt;&lt;/app-message&gt;
+ * @implements OnInit
+ */
 export class MessageComponent implements OnInit {
+  /**
+   * Message component
+   * @param message: Message
+   */
   @Input() message!: Message;
-  
   constructor() {}
-
+  /**
+   * On init
+   * @returns void
+   */
   ngOnInit(): void {
   }
 
