@@ -31,6 +31,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         // Se ejecuta el método para configurar el WebView
         webViewSetup()
+        setListener()
+    }
+
+    /**
+     * Método para configurar el listener del SwipeRefreshLayout
+     * @see setListener (Android)
+     * @see SwipeRefreshLayout (Android)
+     * @see setOnRefreshListener (Android)
+     */
+    private fun setListener() {
+        binding.swiperefresh.setOnRefreshListener {
+            binding.webView.reload()
+            binding.swiperefresh.isRefreshing = false
+        }
     }
 
     /**
