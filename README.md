@@ -69,6 +69,28 @@ Frontend no requiere configuración especial.
 Este bot de momento solo es capaz de responder con texto, imagenes y opciones de respuesta. Es posible que si tu bot de Watson Assistant tiene más opciones, el bot no las pueda responder.
 ### Frontend
 Si quieres mandar otros tipos de mensajes, como por ejemplo, un audio, debes modificar el código del frontend para que pueda enviar el mensaje y recibir la respuesta del chatbot.
+#
+## Generar documentacion / Ver documentacion
+### Backend
+Para generar la documentación del backend, se debe ejecutar el siguiente comando:
+```bash
+mvn javadoc:javadoc
+```
+Esto generará la documentación en la ruta target/site/apidocs. Para ver la documentación, abre el fichero index.html que se encuentra en la ruta target/site/apidocs.
+### Frontend
+Para generar la documentación del frontend, se debe ejecutar el siguiente comando:
+```bash
+npm run compodoc
+```
+Esto generará la documentación en la ruta documentation. Para ver la documentación, abre el fichero index.html que se encuentra en la ruta documentation.
+
+**Asegurate de estar en las carpetas correspondientes antes de ejecutar los comandos.**
+### Android
+Para generar la documentación del android, se debe ejecutar el siguiente comando:
+```bash
+./gradlew dokkaHtml
+```
+Esto generará la documentación en la ruta app/build/dokka/html. Para ver la documentación, abre el fichero index.html que se encuentra en la ruta.
 
 #
 ## Licencia
